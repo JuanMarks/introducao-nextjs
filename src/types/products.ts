@@ -7,3 +7,8 @@ export type Product = {
     category?: string;
     inStock?: boolean;
 };
+
+export interface Links {
+   name: string;
+    href: string;
+}

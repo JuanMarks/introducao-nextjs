@@ -12,7 +12,7 @@ export default function CardProducts({ products }: CardProductsProps) {
         {products.map((product) => (
             <div key={product.id} className="bg-white shadow-md rounded-lg p-6">
                 <h2 className="text-xl font-semibold mb-4 text-black">{product.name}</h2>
-                <p className="text-gray-600 text-black">${product.price}</p>
+                <p className="text-black">${product.price}</p>
             </div>
         ))}
         {/* Repeat for more products */}
