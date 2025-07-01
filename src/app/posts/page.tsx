@@ -1,39 +1,41 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+
+import { useState, useEffect } from "react";
 
 type Post = {
-    message:string
+    id: number;
+    title: string;
+    body: string;
 }
 
 export default function PostsPage() {
-    const [posts, setPosts] = useState<Post | null>(null);
-    const fetchPosts = async () => {
-        const res = await fetch('https://dog.ceo/api/breeds/image/random');
-        const data = await res.json();
-        console.log('Posts carregados:', data);
-        setPosts(data);
-    };
 
-    const reloadButton = () =>{
-        fetchPosts()
-        // window.location.reload()
-    }
+    const [posts, setPosts] = useState<Post[]>([])
 
     useEffect(() => {
+        const fetchPosts = async () => {
+            const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=2")
+            const data = await res.json();
+            setPosts(data)
+
+        }
         fetchPosts();
-    }, []);
+    }, [])
+
+
     return (
-        <div>
-            <h1 className='text-3xl text-center mb-6 font-bold'>Dogs</h1>
-                <div className='flex justify-center'>
-                    <img className='w-100 h-100 rounded' src={posts?.message} alt="" />
-                    
+        <div className="bg-gray-100 min-h-screen">
+            <h1
+                className="text-3xl font-bold mb-6 text-center">
+                Últimos Posts
+            </h1>
+            {posts.map((post)=>(
+                <div key={post.id} className="bg-violet-100 p-4 m-4 rounded shadow">
+                    <h2 className="text-xl font-semibold">{post.title}</h2>
+                    <p className="text-gray-600">{post.body}</p>
                 </div>
-                <div className='flex justify-center'>
-                    <button className=' bg-amber-800 rounded p-4 mt-2' onClick={reloadButton}>RELOAD</button>
-                </div>
-                
-                
+            ))}
+
         </div>
-    );
+    )
 }
