@@ -3,6 +3,7 @@
 
 'use client';
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 type DogImage = {
     message: string;
@@ -25,7 +26,7 @@ export default function DogsPage() {
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
             <h1 className="text-3xl font-bold mb-4">Random Dog 🐶</h1>
 
-            <img
+            <Image
                 src={dog.message}
                 alt="Random dog"
                 className="w-80 h-80 object-cover rounded-xl shadow-lg"
