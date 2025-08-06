@@ -4,6 +4,7 @@ import { Card } from "@/components/Card";
 import NavBar from "@/components/NavBar";
 import CommentForm from "@/components/CommentForm";
 import CommentList from "@/components/CommentList";
+import Counter from "@/components/Counter";
 import React, { useState } from "react";
 // import PlaceForm from "@/components/PlaceForm";
 
@@ -62,20 +63,20 @@ export default function Home() {
   ]);
 
     const handleAddComment = (commentText: string) => {
-    if (commentText.trim() === "") {
-        // Não adiciona comentários vazios
-        return;
-    }
+        if (commentText.trim() === "") {
+            // Não adiciona comentários vazios
+            return;
+        }
 
-    const newComment: Comment = {
-      author: "Usuário Anônimo", // Você pode customizar o autor
-      content: commentText,
-      date: new Date().toLocaleDateString('pt-BR'), // Formata a data para o padrão brasileiro
+        const newComment: Comment = {
+        author: "Usuário Anônimo", // Você pode customizar o autor
+        content: commentText,
+        date: new Date().toLocaleDateString('pt-BR'), // Formata a data para o padrão brasileiro
+        };
+
+        // Adiciona o novo comentário à lista existente
+        setComments([...comments, newComment]);
     };
-
-    // Adiciona o novo comentário à lista existente
-    setComments([...comments, newComment]);
-  };
     return (
         <div className=" ">
 
@@ -92,6 +93,8 @@ export default function Home() {
                 <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
                     Recursos Principais
                 </h2>
+
+                <Counter initialCount={0} />
 
                 <div>
                     <CommentList comments={comments} />
