@@ -5,6 +5,7 @@ import NavBar from "@/components/NavBar";
 import CommentForm from "@/components/CommentForm";
 import CommentList from "@/components/CommentList";
 import Counter from "@/components/Counter";
+import LikeButton from "@/components/LikeButton";
 import React, { useState } from "react";
 // import PlaceForm from "@/components/PlaceForm";
 
@@ -94,7 +95,7 @@ export default function Home() {
                     Recursos Principais
                 </h2>
 
-                <Counter initialCount={0} />
+                
 
                 <div>
                     <CommentList comments={comments} />
