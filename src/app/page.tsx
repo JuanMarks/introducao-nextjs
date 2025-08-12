@@ -1,5 +1,6 @@
 import { Card } from "@/components/Card";
 import NavBar from "@/components/NavBar";
+import LampOnOffState from "@/components/LampOnOffState";
 // import PlaceForm from "@/components/PlaceForm";
 
 
@@ -22,7 +23,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
           Recursos Principais
         </h2>
-
+        <LampOnOffState/>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8" >
           <Card
             title="Renderização Híbrida"
