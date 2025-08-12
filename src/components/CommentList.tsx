@@ -24,6 +24,7 @@ export default function CommentList({ comments }: CommentListProps) {
                                 content={comment.content}
                                 date={comment.date}
                             />
+                            
                         </li>
                     ))}
                 </ul>

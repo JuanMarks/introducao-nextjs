@@ -2,16 +2,24 @@
 interface cardPorps {
     title: string,
     description: string,
-    imageUrl?: string,
+    icon: string
 }
 
-export function Card({ title, description, imageUrl }: cardPorps) {
+export function Card({ title, description, icon }: cardPorps) {
     return (
-        <div className="bg-white shadow-md rounded-lg p-6">
-            {imageUrl && <img src={imageUrl} alt={title} className="w-full h-48 object-cover rounded-t-lg mb-4" />}
-            <h3 className="text-xl font-semibold mb-2">{title}</h3>
-            <p className="text-gray-700">{description}</p>
+
+        <div className="
+        bg-violet-200 
+        p-6 rounded-xl 
+        hover:shadow-md transition duration-300"
+        >
+            <div className="text-4xl mb-4">{icon}</div>
+            <h3 className="
+            text-xl font-semibold text-gray-800 mb-2">
+                {title}
+            </h3>
+            <p className="text-gray-600">{description}</p>
+
         </div>
-        
     )
 }
