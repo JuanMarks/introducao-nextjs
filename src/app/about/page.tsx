@@ -1,5 +1,5 @@
 // import NavBar from "@/components/NavBar"
-
+import MiniDisplay from "@/components/MiniDisplay"
 export default function About(){
 
     return(
@@ -7,6 +7,7 @@ export default function About(){
             {/* <NavBar label1="Produtos" label2="Adminitradores" label3="Time"/> */}
             <h1>Sobre nós</h1>
             <p>Informações sobre a empresa ...</p>
+            <MiniDisplay/>
         </div>
     )
 }
