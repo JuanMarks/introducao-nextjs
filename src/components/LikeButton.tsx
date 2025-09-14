@@ -3,7 +3,6 @@ import React from 'react'
 export default function LikeButton() {
     const [liked, setLiked] = React.useState(0);
 
-    // Like button com coração que conta as curtidas
     return (
         <button
             onClick={() => setLiked(liked + 1)}

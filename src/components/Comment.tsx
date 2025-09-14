@@ -1,3 +1,4 @@
+'use client';
 import LikeButton from "./LikeButton";
 
 type CommentProps = {
